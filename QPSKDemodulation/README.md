@@ -6,10 +6,9 @@ This project is created by : Mohammad Hasan Shammakhi
 
 In this project the qpsk demodulation system is implemented. This project can be used for other Modulation in PSK family by little changes.
 
-
 To fully understand the details of this work and to see the results, please watch the "Capstone Presentaiton" video.
 
-In this project there are DDC block, Filter BaseBand (Frequency domain filter based on cufft), resampler, Matched filter, Power normalizer, Timing recovery and PLL.
+- [x] In this project there are DDC block, Filter BaseBand (Frequency domain filter based on cufft), resampler, Matched filter, Power normalizer, Timing recovery and PLL.
 # System requirements:
 the source files are compatible with all visual studio versions but if you want to use my .sln file
 1. Install Visual Studio 2015 update 3  (select c++ option)
@@ -19,7 +18,7 @@ enjoy the project by using .sln file.
 
 # Source Codes:
 
-The source codes are available in https://github.com/mhshammakhi/SDR_GPU/tree/main/QPSKDemodulation/SDR_VS_Version
+The source codes are available in [here](https://github.com/mhshammakhi/SDR_GPU/tree/main/QPSKDemodulation/SDR_VS_Version "Source Codes")
 
 Table, like this one :
 
@@ -39,5 +38,13 @@ utils.h | some useful functions for reading writing and other general purposes
 
 In "Capstone Presentation.mp4" I present more details about processing blocks and code details.
 The presentation file can be found in "Capstone Presentation.pdf".
-"signal.bin" is a short signal which is uploded in this folder but in order to have better performance *__you should generate a long signal__* to validate the system.
+"signal.bin" is a short signal which is uploded in this folder but in order to have better performance you should generate a long signal to validate the system.
 
+# Proof of execution artifacts:
+
+If you set the correct address for input signal and if it has at least 2M samples the code will run and you can see the number of symbol in each block
+If you have a shor signal with short length with less than 2 Mega samples you can change the frame_size to run the project.
+
+You can see one example [here](http://www.google.fr/](https://github.com/mhshammakhi/SDR_GPU/blob/main/QPSKDemodulation/output/Capture.PNG "Run code Example").
+
+# Refrences:
