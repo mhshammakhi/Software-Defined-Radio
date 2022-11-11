@@ -39,5 +39,5 @@ utils.h | some useful functions for reading writing and other general purposes
 
 In "Capstone Presentation.mp4" I present more details about processing blocks and code details.
 The presentation file can be found in "Capstone Presentation.pdf".
-"signal.bin" is a short signal which is uploded in this folder but in order to have better performance _you should generate a long signal_ to validate the system.
+"signal.bin" is a short signal which is uploded in this folder but in order to have better performance *__you should generate a long signal__* to validate the system.
 
