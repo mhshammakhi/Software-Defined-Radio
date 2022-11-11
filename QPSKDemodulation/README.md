@@ -6,7 +6,6 @@ This project is created by : Mohammad Hasan Shammakhi
 
 In this project the qpsk demodulation system is implemented. This project can be used for other Modulation in PSK family by little changes.
 
-A short signal is uploded in this folder but in order to have better performance you should generate a long signal to validate the system.
 
 To fully understand the details of this work and to see the results, please watch the "Capstone Presentaiton" video.
 
@@ -35,3 +34,10 @@ main.m | For defining controling and caling the main parameters and functions of
 utils.h | some useful functions for reading writing and other general purposes
 
 ```
+
+# Other Files:
+
+In "Capstone Presentation.mp4" I present more details about processing blocks and code details.
+The presentation file can be found in "Capstone Presentation.pdf".
+"signal.bin" is a short signal which is uploded in this folder but in order to have better performance _you should generate a long signal_ to validate the system.
+
