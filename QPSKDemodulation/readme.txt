@@ -1,1 +1,8 @@
 
+This project is created by : Mohammad Hasan Shammakhi
+
+In this project the qpsk demodulation system is implemented. This project can be used for other Modulation in PSK family by little changes.
+
+A short signal is uploded in this folder but for gaining better performance you should generate a long signal to validate the system.
+
+
