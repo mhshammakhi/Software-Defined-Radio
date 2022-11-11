@@ -7,4 +7,8 @@ A short signal is uploded in this folder but in order to have better performance
 
 To fully understand the details of this work and to see the results, please watch the "Capstone Presentaiton" video.
 
+In this project there are DDC block, Filter BaseBand (Frequency domain filter based on cufft), resampler, Matched filter, Power normalizer, Timing recovery and PLL.
+
+This project is created in Visual Studio 2015 update 3 and Cuda 9.0.
+
 
