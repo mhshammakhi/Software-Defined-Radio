@@ -51,7 +51,8 @@ You can see one example [here](https://github.com/mhshammakhi/SDR_GPU/tree/main/
 
 ![Alt text](https://github.com/mhshammakhi/SDR_GPU/tree/main/QPSKDemodulation/output/Capture.PNG "Run code Example")
 
-![Alt text](https://github.com/mhshammakhi/SDR_GPU/tree/main/QPSKDemodulation/output/RunningCode.gif)
+And this the video sample:
+![](https://https://github.com/mhshammakhi/SDR_GPU/blob/main/QPSKDemodulation/output/RunningCode.gif)
 
 # Refrences:
 
