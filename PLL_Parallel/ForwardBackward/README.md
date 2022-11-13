@@ -20,4 +20,11 @@ This is the generated lib for using **forward backward PLL** in your system.
 ## ExecuteFiles for testing
 
 You can test the forward-backward PLL by running the exe file `.\PLL.exe --signal-file ".\\pll_input.bin" --modulation "QPSK" --frame-length 80000 --frame-count 20`
+    - you can set input file address by setting `--signal-file` 
+    - arg `--modulation` sets the modulation type.
+    - each frame length is set by `--frame-length`
+    - number of parallel frame can set by `--frame-count`
+all of these parameters defenition can be found in **"Gb/Sec Frame-Based Phase Locked Loop on Gpu."**.    
+
+    
 
