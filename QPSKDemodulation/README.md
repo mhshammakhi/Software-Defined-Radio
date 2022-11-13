@@ -50,6 +50,6 @@ You can see one example [here](https://github.com/mhshammakhi/SDR_GPU/tree/main/
 # Refrences:
 
 1. E. Grayver, Implementing software defined radio, Springer Science & Business Media, 2012.
-2. M. H. Shammakhi, P. H. Faraji, M. M. Bidhandi, M. Hossein475 zadeh, Gpu-based parallel algorithm for wideband signal timing recovery, Turkish Journal of Computer and Mathematics Education (TURCOMAT) 13 (1) (2022) 190–197.
+2. M. H. Shammakhi, P. H. Faraji, M. M. Bidhandi, M. Hosseinzadeh, Gpu-based parallel algorithm for wideband signal timing recovery, Turkish Journal of Computer and Mathematics Education (TURCOMAT) 13 (1) (2022) 190–197.
 3. C. Nvidia, Compute unified device architecture programming 505 guide.
 4. J. Cheng, M. Grossman, T. McKercher, Professional CUDA c programming, John Wiley & Sons, 2014.
