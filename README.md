@@ -17,4 +17,4 @@ It is a project for Coursera *GPU specialization*.
 
 In this folder we upload some signals for testing the algorithms.
 
-**For More Details You can contact me by: <ins>mh.shammakhi@gmail.com</ins> **
+**For More Details You can contact me by: <ins>mh.shammakhi@gmail.com</ins>**
