@@ -47,15 +47,11 @@ The presentation file can be found in "Capstone Presentation.pdf".
 If you set the correct address for input signal and if it has at least 2M samples the code will run and you can see the number of symbol in each block
 If you have a shor signal with short length with less than 2 Mega samples you can change the frame_size to run the project.
 
-You can see one example:
+You can see one example [here](https://github.com/mhshammakhi/SDR_GPU/tree/main/QPSKDemodulation/output/Capture.PNG "Run code Example"):
 
 ![Alt text](https://github.com/mhshammakhi/SDR_GPU/tree/main/QPSKDemodulation/output/Capture.PNG "Run code Example")
 
-
-![plot](https://github.com/mhshammakhi/SDR_GPU/tree/main/QPSKDemodulation/output/Capture.PNG "Run code Example")
-or
-
-[here](https://github.com/mhshammakhi/SDR_GPU/tree/main/QPSKDemodulation/output/Capture.PNG "Run code Example").
+![](https://github.com/mhshammakhi/SDR_GPU/tree/main/QPSKDemodulation/output/RunningCode.gif)
 
 # Refrences:
 
