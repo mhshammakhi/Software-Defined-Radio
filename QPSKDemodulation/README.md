@@ -56,7 +56,7 @@ And [this the video sample](https://https://github.com/mhshammakhi/SDR_GPU/blob/
 ![](https://https://github.com/mhshammakhi/SDR_GPU/blob/main/QPSKDemodulation/output/RunningCode.gif)
 
 After compiling, Use `SDR.exe -i <inputFileAddress> -f <baseband filter Coefficient file address> -o <output file address for saving output>` to run the code
-if you don't set any of `-i -f -o` the code will use default addresses which are **"./InputFiles/signal.bin" "./InputFiles/bbFilterCoeffs.bin" and "SDR_Output.bin"**
+if you don't set any of `-i -f -o` the code will use default addresses which are **<ins>"./InputFiles/signal.bin"</ins> "./InputFiles/bbFilterCoeffs.bin" and "SDR_Output.bin"**
 
 # Refrences:
 
