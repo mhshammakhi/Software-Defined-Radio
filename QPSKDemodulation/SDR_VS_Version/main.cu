@@ -7,10 +7,18 @@
 #include"ProcessingCore.h"
 #include"utils.h"
 #include"definition.h"
+#include<tuple>
+#include <tuple>
+#include <iostream>
+#include <string>
+#include <stdexcept>
 
 
-int main()
+
+std::tuple<std::string, std::string, std::string> parseCommandLineArguments(int argc, char** argv);
+int main(int argc, char** argv)
 {
+	
 	cudaError_t cudaStatus;
 
 	// Choose which GPU to run on, change this on a multi-GPU system.
@@ -22,9 +30,11 @@ int main()
 
 	//------------------- Set Input Params ------------------
 	SignalParams sig_params;
-	sig_params.inputFileAddress = "./signal_Fc1_SPS4_ModuQPSK_SNR15_float.bin";
-	sig_params.outputFileAddress = "SDR_Output.bin";
-	sig_params.filterbb_fileAddress = "./InputFiles/bbFilterCoeffs.bin";
+	std::tuple<std::string, std::string, std::string> a;
+	a = parseCommandLineArguments(argc, argv);
+	sig_params.inputFileAddress = std::get<0>(a);
+	sig_params.outputFileAddress = std::get<1>(a);
+	sig_params.filterbb_fileAddress = std::get<2>(a);
 
 	sig_params.sps = 4;
 	sig_params.Fs = sig_params.sps;
@@ -46,4 +56,34 @@ int main()
 
 	std::cout << "Finished!\n";
     return 0;
+}
+
+std::tuple<std::string, std::string, std::string> parseCommandLineArguments(int argc, char** argv)
+{
+
+	std::string inputFileAddress = "./InputFiles/signal.bin";
+	std::string outputFileAddress = "SDR_Output.bin";
+	std::string filterbb_fileAddress = "./InputFiles/bbFilterCoeffs.bin";
+
+
+
+
+	for (int i = 1; i < argc; i++) {
+		if (argv[i][0] == '-' && argv[i][1] && !argv[i][2]) {
+			char arg = argv[i][1];
+			unsigned int* toSet = 0;
+			switch (arg) {
+			case 'i':
+				inputFileAddress = argv[i] + 3;
+				break;
+			case 'f':
+				filterbb_fileAddress = argv[i] + 3;
+				break;
+			case 'o':
+				outputFileAddress = argv[i] + 3;
+				break;
+			}
+		}
+	}
+	return{ inputFileAddress, outputFileAddress, filterbb_fileAddress };
 }
