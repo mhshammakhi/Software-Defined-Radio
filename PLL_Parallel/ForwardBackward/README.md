@@ -26,5 +26,11 @@ You can test the forward-backward PLL by running the exe file `.\PLL.exe --signa
     - number of parallel frame can set by `--frame-count`
 all of these parameters defenition can be found in **"Gb/Sec Frame-Based Phase Locked Loop on Gpu."**.    
 
-    
+## Matlab Code
 
+In this folder there are three **m file** `createInput.m`, `main.m` and `PLL_V1_ForwardBackward.m`
+By using `createInput.m` you can create signal with the desired value of frequency and phase offset
+In `main.m` we compensate frequency and phase offset by using  `PLL_V1_ForwardBackward.m`
+and `PLL_V1_ForwardBackward.m` is the implemention of forward-backward PLL
+
+**The second part of `FB_PLL` which equals the rotation of all frames do not implemented in matlab code.**
