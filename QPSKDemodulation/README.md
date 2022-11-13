@@ -49,7 +49,7 @@ If you have a shor signal with short length with less than 2 Mega samples you ca
 
 You can see one example:
 
-![Alt text](https://github.com/mhshammakhi/SDR_GPU/tree/main/QPSKDemodulation/output/Capture.PNG?raw=true "Run code Example")
+![Alt text](https://github.com/mhshammakhi/SDR_GPU/tree/main/QPSKDemodulation/output/Capture.PNG "Run code Example")
 or
 
 [here](https://github.com/mhshammakhi/SDR_GPU/tree/main/QPSKDemodulation/output/Capture.PNG "Run code Example").
