@@ -48,7 +48,10 @@ If you set the correct address for input signal and if it has at least 2M sample
 If you have a shor signal with short length with less than 2 Mega samples you can change the frame_size to run the project.
 
 You can see one example:
-![alt text](http://url/to/img.png](https://github.com/mhshammakhi/SDR_GPU/tree/main/QPSKDemodulation/output/Capture.PNG?raw=true)
+![Screenshot](http://url/to/img.png](https://github.com/mhshammakhi/SDR_GPU/tree/main/QPSKDemodulation/output/Capture.PNG?raw=true)
+
+or
+
 [here](https://github.com/mhshammakhi/SDR_GPU/tree/main/QPSKDemodulation/output/Capture.PNG "Run code Example").
 
 # Refrences:
