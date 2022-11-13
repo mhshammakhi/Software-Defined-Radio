@@ -16,6 +16,8 @@ the source files are compatible with all visual studio versions but if you want 
 
 enjoy the project by using .sln file.
 
+Also, the project is tested by visual studio 2019 and CUDA 10.1.
+
 # Source Codes:
 
 The source codes are available in [here](https://github.com/mhshammakhi/SDR_GPU/tree/main/QPSKDemodulation/SDR_VS_Version "Source Codes")
