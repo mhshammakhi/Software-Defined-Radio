@@ -3,7 +3,7 @@ This project is created by: Mohammad Hasan Shammakhi
 
 ## Gardner_Parallel
 In this folder we have two version of timing recovery based on Gardner algorithm:
-  - The method which is explain in [this article](https://www.turcomat.org/index.php/turkbilmat/article/view/12005 "GPU-Based Parallel Algorithm for Wideband Signal Timing Recovery")
+  - The method which is explain in [**GPU-Based Parallel Algorithm for Wideband Signal Timing Recovery**](https://www.turcomat.org/index.php/turkbilmat/article/view/12005 "GPU-Based Parallel Algorithm for Wideband Signal Timing Recovery")
   - The forward-backward method which will be published soon in an article
 
 ## PLL_Parallel/ForwardBackward
