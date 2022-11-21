@@ -2,7 +2,7 @@ This project is created by : Mohammad Hasan Shammakhi
 
 # The implementation of GPU based demodulation system for QPSK signals in CUDA.
 
-**This Project is created to present as The GPU Specialization Courses projec**
+**This Project is created to present as The GPU Specialization Courses project**
 
 In this project the qpsk demodulation system is implemented. This project can be used for other Modulation in PSK family by little changes.
 
