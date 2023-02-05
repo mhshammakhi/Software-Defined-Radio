@@ -1,6 +1,6 @@
 #include "blocks.cuh"
 
-__constant__ float c_bbFilterCoeffs[1024];
+__constant__ float c_bbFilterCoeffs[max_bbfilter_len];
 
 __global__
 void Baseband(cuComplex inOut[], const float* freq_init,
@@ -29,6 +29,7 @@ void Baseband_Update_State(float* freq_init, const float frequency, const int da
 }
 
 void setBBFilterCoeffsConstMem(const float cpu_array[], const int& filterLen) {
+    assert(max_bbfilter_len >= filterLen);
     cudaMemcpyToSymbolAsync(c_bbFilterCoeffs, cpu_array, filterLen * sizeof(float), 0, cudaMemcpyHostToDevice);
 }
 
