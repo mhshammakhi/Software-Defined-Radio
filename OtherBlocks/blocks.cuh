@@ -4,11 +4,14 @@
 #include "device_launch_parameters.h"
 #include "cuComplex.h"
 
-#define _USE_MATH_DEFINES
-#include<math.h>
+#define  _USE_MATH_DEFINES
+#include <math.h>
+#include <assert.h>
+
+const int max_bbfilter_len = 1024;
 
 __global__
-void Baseband(cuComplex output[], const cuComplex input[], const float* freq_init,
+void Baseband(cuComplex inOut[], const float* freq_init,
               const int dataLength, const float frequency);
 
 __global__
