@@ -3,7 +3,7 @@
 __constant__ float c_bbFilterCoeffs[1024];
 
 __global__
-void Baseband(cuComplex output[], const cuComplex input[], const float* freq_init,
+void Baseband(cuComplex inOut[], const float* freq_init,
     const int dataLength, const float frequency)
 {
     int i = (blockDim.x * blockIdx.x) + threadIdx.x;
@@ -15,9 +15,9 @@ void Baseband(cuComplex output[], const cuComplex input[], const float* freq_ini
     {
         float freq = float(i % 10000) * frequency;
         omega = 2.0 * M_PI * (freq - int(freq)) + local_freq_init;
-        local_input = input[i];
-        output[i].x = local_input.x * cosf(omega) + local_input.y * sinf(omega);
-        output[i].y = local_input.y * cosf(omega) - local_input.x * sinf(omega);
+        local_input = inOut[i];
+        inOut[i].x = local_input.x * cosf(omega) + local_input.y * sinf(omega);
+        inOut[i].y = local_input.y * cosf(omega) - local_input.x * sinf(omega);
         i += blockDim.x * gridDim.x;
     }
 }
