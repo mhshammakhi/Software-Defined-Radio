@@ -8,7 +8,7 @@
 #include<math.h>
 
 __global__
-void Baseband(cuComplex output[], const cuComplex input[], const float* freq_init,
+void Baseband(cuComplex inOut[], const float* freq_init,
               const int dataLength, const float frequency);
 
 __global__
