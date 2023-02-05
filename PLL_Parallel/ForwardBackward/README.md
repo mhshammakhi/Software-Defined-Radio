@@ -2,7 +2,7 @@ This project is created by : Mohammad Hasan Shammakhi
 
 # The implementation of GPU based Phased Locked Loop for PSK signals in CUDA.
 
-To fully understand the details of this work and to see the results, please see the [this][https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4100444] article:
+To fully understand the details of this work and to see the results, please see the [this](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4100444) article:
 
 Shammakhi, Mohammad Hasan, et al. "Gb/Sec Frame-Based Phase Locked Loop on Gpu." Available at SSRN 4100444.
 
