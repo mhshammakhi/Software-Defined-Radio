@@ -34,7 +34,7 @@ This folder contains the implementation of two GPU-based Phased-Locked Loop algo
   - The Intra-Frame Parallelism Algorithm
 
 <p style="text-align: justify;">
- The static library files for windows (.lib) are provided for each algorithm and there are test files that demonstrate the usage of these libraries. The libraries were made using Visual Studio 2015 and the are available for both debug and release builds.
+ The static library files for windows (.lib) are provided for each algorithm. The libraries were made using Visual Studio 2015 and the are available for both debug and release builds (x64 only). A .exe file is also included for testing purposes (the output symbols and the processing rate). The details of running this .exe file in explained in the README file inside PLL_Parallel directory.
 
 In the first algorithm, the PLL is applied to multiple frames simultaneously. To fully understand the details of this work and to see the results, please visit [this](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4100444) article.
 
