@@ -1,0 +1,1 @@
+.\PLL_Par.exe ..\..\ForwardBackward\ExecuteFiles\pll_input.bin QPSK 4
