@@ -97,6 +97,50 @@ void test_bbfilter() {
     gpuErrchk();
 }
 
+void test_demappers() {
+
+	const std::string signalFileAddress = "input.bin";
+	const int frameLen = 512 * 1024;
+	ModulationType mod_type = ModulationType::_16QAM;
+	const int nBitsPerSym = getBitsPerSymbol(mod_type);
+
+	PartialFileReader fileReader;
+	fileReader.setFileName(signalFileAddress);
+	fileReader.openFile();
+	int num_elements = fileReader.getTotalFileSizeInBytes() / sizeof(cuComplex);
+
+	PartialFileWriter fileWriter;
+	fileWriter.setFileName("output.bin");
+	fileWriter.openFile();
+
+	std::vector<cuComplex> h_input(frameLen);
+	std::vector<uint8_t> h_output(frameLen * nBitsPerSym);
+	cuComplex* d_input;
+	uint8_t *d_output;
+	cudaMalloc(&d_input, frameLen * sizeof(cuComplex));
+	cudaMalloc(&d_output, frameLen * nBitsPerSym * sizeof(uint8_t));
+	gpuErrchk();
+
+	int i{};
+	while ((i + 1) * frameLen <= num_elements) {
+		fileReader.readBinData(h_input, frameLen);
+		cudaMemcpyAsync(d_input, h_input.data(), frameLen * sizeof(cuComplex), cudaMemcpyHostToDevice);
+
+		Demapper(mod_type, d_output, d_input, frameLen);
+
+		cudaMemcpy(h_output.data(), d_output, nBitsPerSym * frameLen * sizeof(uint8_t), cudaMemcpyDeviceToHost);
+		fileWriter.writeBinData(h_output, nBitsPerSym * frameLen);
+		i++;
+	}
+
+	fileReader.closeFile();
+	fileWriter.closeFile();
+
+	cudaFree(d_input);
+	cudaFree(d_output);
+	gpuErrchk();
+}
+
 int main()
 {
     cudaError_t cudaStatus = cudaSetDevice(0);
@@ -106,7 +150,8 @@ int main()
     }
 
     //test_baseband();
-    test_bbfilter();
+    //test_bbfilter();
+    test_demappers();
 
     // cudaDeviceReset must be called before exiting in order for profiling and
     // tracing tools such as Nsight and Visual Profiler to show complete traces.
