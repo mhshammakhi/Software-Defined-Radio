@@ -246,6 +246,7 @@
 
 
 PLL_Parallel/ForwardBackward/CudaLib/make_lib_vs/
+PLL_Parallel/ForwardBackward/CudaLib/test_libs_vs/
 PLL_Parallel/IntraFrameParallelism/CudaLib/makeLib/
 PLL_Parallel/IntraFrameParallelism/ExecuteFiles/TR_PLL_Par/
 OtherBlocks/blocks/

@@ -12,8 +12,10 @@ __global__ void PLL_P1(float *out_re, float *out_im, float *phiBegin, float *phi
 	const float *in_re, const float *in_im, const float alpha, const float beta, const int pow,
 	const int sizeOfFrame, const int numFrames);
 
-__global__ void mismatchDetection(float *misang, const float *phiBegin, const float *phiEnd,
+__global__ void mismatchDetection_V2_P1(float *misang, const float *phiBegin, const float *phiEnd,
 	const int numFrames);
+
+__global__ void mismatchDetection_V2_P2(float *misang, const int numFrames);
 
 __global__ void PLL_P2(float *in_out_re, float *in_out_im, const float *misang,
 	const int sizeOfFrame, const int numFrames);
