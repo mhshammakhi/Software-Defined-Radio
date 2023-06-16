@@ -3,8 +3,8 @@ Created by Mohammad Hasan Shammakhi
 
 This project contains:
 1. [x] CPU-Based SDR
-2. [x] 2.GPU-Based SDR
-3. [ ] 3.FPGA-Based SDR
+2. [x] GPU-Based SDR
+3. [ ] FPGA-Based SDR
 
 The project consists of multiple directories, each serving a distinct purpose. Here's a concise overview of the main directories in this repository.
 
