@@ -7,7 +7,6 @@
 #include"ProcessingCore.h"
 #include"utils.h"
 #include"definition.h"
-#include<tuple>
 #include <tuple>
 #include <iostream>
 #include <string>
