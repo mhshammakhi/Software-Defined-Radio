@@ -1,7 +1,7 @@
 
 function PLL_output = PLL_V1_ForwardBackward(PLL_In , pow , PLL_Alpha , PLL_Betta,FrameLen)
 %% framing - PLL
-numFrames = 2^4;
+numFrames = 2^3;
 subFrameLen = FrameLen / numFrames;
 frames = zeros(subFrameLen+1, numFrames);
 for i = 1:numFrames
