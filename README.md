@@ -39,6 +39,7 @@ This folder encompasses the CUDA implementation of two GPU-based Phased-Locked L
 
   - The Forward-Backward Algorithm
   - The Intra-Frame Parallelism Algorithm
+  - The Enhanced FB-PLL Algorithm
 
 <div align="justify"> 
  The folder includes static library files (.lib) for each algorithm, designed for Windows. These libraries, built using Visual Studio 2015, are available in both debug and release builds (x64 only). Additionally, an executable file is provided for testing purposes, which outputs symbols and processing rates. For instructions on running the executable, please refer to the README file inside the PLL_Parallel directory.
@@ -46,6 +47,8 @@ This folder encompasses the CUDA implementation of two GPU-based Phased-Locked L
 The first algorithm implements a parallelized PLL for multiple frames. To gain a comprehensive understanding of the methodology and view the results, please refer to [this](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4100444) article.
 
 In the second algorithm, parallelism is employed within a single frame, allowing for parallel compensation of multiple consecutive symbols. This approach differs from the first algorithm, which applies parallelism across multiple frames.
+
+The third algorithm achieves significantly faster processing speeds by leveraging efficient memory management and shorter frame requirements, ensuring compatibility with a wide range of GPUs while reducing overall memory usage.
 </p>
 
 ## Signal
