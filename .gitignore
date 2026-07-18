@@ -243,7 +243,7 @@
 ## FAKE - F# Make
 #.fake/
 #
-
+.vscode/
 
 PLL_Parallel/ForwardBackward/CudaLib/make_lib_vs/
 PLL_Parallel/ForwardBackward/CudaLib/test_libs_vs/
