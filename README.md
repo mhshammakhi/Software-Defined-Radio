@@ -2,16 +2,16 @@
 Created by Mohammad Hasan Shammakhi
 
 This project contains:
-1. [x] CPU-Based SDR
+1. [ ] CPU-Based SDR
 2. [x] GPU-Based SDR
-3. [ ] FPGA-Based SDR
+
 
 The project consists of multiple directories, each serving a distinct purpose. Here's a concise overview of the main directories in this repository.
 
 ## GPU_Based
 
 <p align="justify">
-This directory contains the full GPU-based SDR pipeline (frequency filtering, timing recovery, and PLL) built into a single executable, <code>sdr_gpu</code>. Pre-built binaries and object files are provided for several GPU architectures (<code>sm_61</code>, <code>sm_75</code>, <code>sm_86</code>, <code>sm_89</code>), along with the runtime <code>config.ini</code>, filter coefficient data in <code>data/</code>, and helper scripts in <code>scripts/</code> (e.g. <code>output_check.py</code> to compute EVM and plot the output constellation).
+This directory contains the full GPU-based SDR pipeline (frequency filtering, timing recovery, and PLL) built into a single executable, <code>sdr_gpu</code>. Pre-built binaries and object files are provided for several GPU architectures (<code>sm_61</code>, <code>sm_75</code>, <code>sm_86</code>, <code>sm_89</code>), along with the runtime <code>config.ini</code>, filter coefficient data in <code>data/</code>, and helper scripts in <code>scripts/</code> (e.g. <code>output_check.py</code> to compute EVM and plot the output constellation). The input signal file can be either 32-bit <code>float</code> or 16-bit <code>int16</code> interleaved I/Q samples, selected via the <code>dataType</code> key in <code>config.ini</code>.
 </p>
 
 Use the root [Makefile](Makefile) to stage the right binary for your GPU:
@@ -32,6 +32,7 @@ The executable requires the config file to be passed explicitly via <code>-i</co
 - `input` — path to the input signal file (must match the actual signal you intend to process).
 - `output` — path where the demodulated output will be written.
 - `filterbb` — path to the baseband filter coefficients file.
+- `dataType` — sample format of the input file's interleaved I/Q data: `float` (32-bit float, full scale = 1.0) or `int16` (16-bit signed integer, full scale = 32768). Must match how the input file was generated, otherwise the output will be meaningless.
 - `sps`, `Rs`, `BW`, `central_freq`, `rollOff` — must match the true parameters of the input signal (samples per symbol, symbol rate, bandwidth, center frequency, and filter roll-off). A mismatch here (e.g. the wrong `sps`) will produce a corrupted or meaningless output.
 
 ## FrequencyFilter
@@ -49,6 +50,16 @@ This directory contains commonly used blocks in SDR systems, excluding the demod
 
 ## Signal
 
-In this folder, we provide a selection of signals that can be used to test and evaluate the performance of the algorithms. These signals serve as representative examples to assess the effectiveness and accuracy of the implemented algorithms. By using these test signals, users can verify the functionality and suitability of the algorithms for their specific requirements.
+In this folder, we provide a selection of signals that can be used to test and evaluate the performance of the algorithms. These signals serve as representative examples to assess the effectiveness and accuracy of the implemented algorithms. By using these test signals, users can verify the functionality and suitability of the algorithms for their specific requirements. Signals are provided in both `float` and `int16` sample formats (see the `dataType` setting above).
+
+<p align="justify">
+Some signal files are too large for a single upload and are split into <code>&lt;name&gt;.Part00</code>, <code>.Part01</code>, ... parts. Run <code>make SampleSignal</code> from the repo root to reassemble the first split signal found in this directory back into its original file:
+</p>
+
+```bash
+make SampleSignal   # finds the first *.Part* file in Signal/ and concatenates
+                     # all its parts back into <name> (e.g. <name>.bin.Part00,
+                     # .Part01, ... -> <name>.bin), in place
+```
 
 **For more details or inquiries, feel free to reach out to me at <ins>mh.shammakhi@gmail.com</ins>. I am available to provide further information or answer any questions you may have.**

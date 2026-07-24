@@ -8,12 +8,13 @@
 
 BUILD_DIR     := build
 GPU_BASED_DIR := GPU_Based
+SIGNAL_DIR    := Signal
 
 CONFIG_SRC := $(GPU_BASED_DIR)/config.ini
 DATA_SRC   := $(GPU_BASED_DIR)/data
 OUTPUT_CHECK_SCRIPT := $(GPU_BASED_DIR)/scripts/output_check.py
 
-.PHONY: gpu-version clean
+.PHONY: gpu-version clean signal
 
 gpu-version:
 	@cap=$$(nvidia-smi --query-gpu=compute_cap --format=csv,noheader 2>/dev/null | head -n1 | tr -d ' '); \
@@ -49,3 +50,10 @@ gpu-version:
 
 clean:
 	rm -rf $(BUILD_DIR)
+
+# Reassembles the first split signal file found in Signal/ (e.g.
+# some_signal.bin.Part00, .Part01, ...) back into some_signal.bin by
+# concatenating its parts, in-place, inside the Signal directory.
+signal:
+	@cd $(SIGNAL_DIR) && f=$$(ls *.Part* | head -n1) && cat "$${f%.Part*}".Part* > "$${f%.Part*}" && \
+		echo "==> Reassembled $${f%.Part*}"
